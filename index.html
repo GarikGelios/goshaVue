@@ -19,14 +19,13 @@
     <div id="app3">
         <button v-on:click="show = !show">Скрыть / показать</button>
         <p v-if="show">Текст, который мы скрываем</p>
-        <p v-else>Текст от условия если</p>
+        <p v-else>{{ showMess }}</p>
+        <p>{{  message | lowercase | capitalize }}</p>
 
         <ul>
             <li v-for="(car, i) in cars">{{ i + 1 }} — {{ car.model }}, скорость {{ car.speed }}</li>
         </ul>
     </div>
-
-    
 
     <hr>
 

@@ -1,3 +1,9 @@
+Vue.filter ('capitalize', function (value) {
+    if (!value) return '';
+    value = value.toString();
+    return value.replace(/\b\w/g, function(l) {  return l.toUpperCase() })
+})
+
 new Vue ({
     el: '#app',
     data: {
@@ -37,6 +43,7 @@ new Vue ({
     el: '#app3',
     data: {
         show: true,
+        message: 'Hello my world! I`am happy to see you!',
         cars: [
             {model:"BMW", speed: 150},
             {model:"Ford", speed:180},
@@ -46,5 +53,17 @@ new Vue ({
     },
     methods: {
 
+    },
+    computed: {
+        showMess () {
+            return this.message.toUpperCase ();
+        }
+    },
+    filters: {
+        lowercase (value) {
+            return value.toLowerCase();
+        }
     }
 })
+
+
