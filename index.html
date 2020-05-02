@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Изучение Vue.js</title>
+
+    <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
@@ -13,7 +15,15 @@
 
 
     <div id="app">
+        <span v-on:click="title='Текст'">Кликнуть и подставить в переменную title текст "Текст"</span> <br>
+        <span @click="title='Другой текст'">Кликнуть и подставить в переменную title текст "Другой текст"</span><br>
+        <span @mouseover="title='Ты навел курсор'">Навести курсор и подставить в переменную title текст"Ты навел курсор"</span><br>
+        <span @mouseover="changeText">Навести курсор и вызвать функцию changeText() описаную в файле main.js</span><br>
+        
+        
         <p>{{ title }}</p>
+        <p v-bind:class="styleCSS">Цвет: {{ styleCSS }}</p>
+        <input type="text" v-on:input="styleCSS = $event.target.value">
     </div>
 
     <script src="js/main.js"></script>
