@@ -33,4 +33,18 @@ new Vue ({
     }
 });
 
+new Vue ({
+    el: '#app3',
+    data: {
+        show: true,
+        cars: [
+            {model:"BMW", speed: 150},
+            {model:"Ford", speed:180},
+            {model:"Mercedes", speed:200},
+            {model:"Audi", speed:220},
+        ]
+    },
+    methods: {
 
+    }
+})

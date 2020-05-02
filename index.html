@@ -13,25 +13,46 @@
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<h3>APP</h3>
-    <div id="app">
-        <span v-on:click="title='Текст'">Кликнуть и подставить в переменную title текст "Текст"</span> <br>
-        <span @click="title='Другой текст'">Кликнуть и подставить в переменную title текст "Другой текст"</span><br>
-        <span @mouseover="title='Ты навел курсор'">Навести курсор и подставить в переменную title текст"Ты навел курсор"</span><br>
-        <span @mouseover="changeText">Навести курсор и вызвать функцию changeText() описаную в файле main.js</span><br>
-        
-        
-        <p>{{ title }}</p>
-        <p v-bind:class="styleCSS">Цвет: {{ styleCSS }}</p>
-        <input type="text" v-on:input="styleCSS = $event.target.value">
+
+    <hr>
+    <h3>APP3</h3>
+    <div id="app3">
+        <button v-on:click="show = !show">Скрыть / показать</button>
+        <p v-if="show">Текст, который мы скрываем</p>
+        <p v-else>Текст от условия если</p>
+
+        <ul>
+            <li v-for="(car, i) in cars">{{ i + 1 }} — {{ car.model }}, скорость {{ car.speed }}</li>
+        </ul>
     </div>
-<hr>
-<h3>APP2</h3>
+
+    
+
+    <hr>
+
+    <h3>APP2</h3>
     <div id="app2">
         <input type="text" v-on:input="increment ($event.target.value)">
         <p>{{ value  }}</p>
         <p>{{ doubleValue }}</p>
     </div>
+
+    <hr>
+
+    <h3>APP</h3>
+    <div id="app">
+        <span v-on:click="title='Текст'">Кликнуть и подставить в переменную title текст "Текст"</span> <br>
+        <span @click="title='Другой текст'">Кликнуть и подставить в переменную title текст "Другой текст"</span><br>
+        <span @mouseover="title='Ты навел курсор'">Навести курсор и подставить в переменную title текст"Ты навел
+            курсор"</span><br>
+        <span @mouseover="changeText">Навести курсор и вызвать функцию changeText() описаную в файле main.js</span><br>
+
+
+        <p>{{ title }}</p>
+        <p v-bind:class="styleCSS">Цвет: {{ styleCSS }}</p>
+        <input type="text" v-on:input="styleCSS = $event.target.value">
+    </div>
+
 
     <script src="js/main.js"></script>
 </body>
