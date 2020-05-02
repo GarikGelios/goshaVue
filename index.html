@@ -13,7 +13,7 @@
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-
+<h3>APP</h3>
     <div id="app">
         <span v-on:click="title='Текст'">Кликнуть и подставить в переменную title текст "Текст"</span> <br>
         <span @click="title='Другой текст'">Кликнуть и подставить в переменную title текст "Другой текст"</span><br>
@@ -24,6 +24,13 @@
         <p>{{ title }}</p>
         <p v-bind:class="styleCSS">Цвет: {{ styleCSS }}</p>
         <input type="text" v-on:input="styleCSS = $event.target.value">
+    </div>
+<hr>
+<h3>APP2</h3>
+    <div id="app2">
+        <input type="text" v-on:input="increment ($event.target.value)">
+        <p>{{ value  }}</p>
+        <p>{{ doubleValue }}</p>
     </div>
 
     <script src="js/main.js"></script>
