@@ -56,3 +56,28 @@ computed: {
 - ``{{ cars[2].model }}`` вывод конкретного элемента в массиве
 - ``<li v-for="car in cars">{{ car.model }}, скорость {{ car.speed }}</li>`` цикл вывода из массива
 - ``v-for="(car, i) in cars"`` создать переменную для id элемента в массиве 
+
+## Lesson 5
+
+- ``{{  message | lowercase }}`` передать переменную обработанную фильтром
+- функция описанная как фильтр принимает аргумент и возвращает обработанный
+
+```js
+filters: {
+        lowercase (value) {
+            return value.toLowerCase();
+        }
+    }
+```
+
+- встроенных фильтров нет, но можно создавать глобальные вне экземляров
+
+```js
+Vue.filter ('capitalize', function (value) {
+    if (!value) return '';
+    value = value.toString();
+    return value.replace(/\b\w/g, function(l) {  return l.toUpperCase })
+})
+```
+
+- ``{{  message | lowercase | capitalize }}`` добавление нескольких фильтров
