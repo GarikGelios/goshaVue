@@ -4,6 +4,23 @@ Vue.filter ('capitalize', function (value) {
     return value.replace(/\b\w/g, function(l) {  return l.toUpperCase() })
 })
 
+Vue.component ('app-car', {
+    data: function () {
+        return {
+            cars: [
+                {model: 'BMW'},
+                {model: 'Volvo'},
+                {model: 'Mercedes-Benz'},
+                {model: 'Ford'},
+                {model: 'Audi'},
+                {model: 'Siat'},
+                {model: 'Fiat'}
+            ]
+        }
+    },
+    template: '<div> <div class="car" v-for="car in cars"><p>{{ car.model }}</p></div> </div>'
+})
+
 new Vue ({
     el: '#app',
     data: {
@@ -63,6 +80,21 @@ new Vue ({
         lowercase (value) {
             return value.toLowerCase();
         }
+    }
+})
+
+new Vue ({
+    el: '#app6',
+    data: {
+        cars: [
+            {model: 'BMW'},
+            {model: 'Volvo'},
+            {model: 'Mercedes-Benz'},
+            {model: 'Ford'},
+            {model: 'Audi'},
+            {model: 'Siat'},
+            {model: 'Fiat'}
+        ]
     }
 })
 
