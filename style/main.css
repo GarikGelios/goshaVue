@@ -13,3 +13,13 @@
 .blue {
     background-color: blue;
 }
+
+.car {
+    background-color: lightcyan;
+    border: 1px solid darkcyan;
+    border-radius: 20px;
+    padding: 0 5px;
+    margin: 5px;
+    max-width: 200px;
+    text-align: center;
+}
